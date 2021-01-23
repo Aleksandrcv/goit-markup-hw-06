@@ -58,8 +58,57 @@
                             <use href="./images/sprite.svg#close-black"></use>
                         </svg>
                     </button>
-                </div>
+                    <form class="form js-speaker-form" action="#" autocomplete="off">
+                      <h2 class="form-title">Оставьте свои данные, мы вам перезвоним</h2>
+                      <div class="inputs">
+                      <label class="form-label">
+                          <span>Имя</span>
+                          <input type="text" class="form-input" name="user-name" />
+                          <svg width="18" height="18">
+                              <use href="./images/sprite.svg#person"></use>
+                          </svg>                        
+                      </label>
+  
+                      <label class="form-label">
+                          <span>Телефон</span>
+                          <input type="tel" class="form-input" name="tel" placeholder=" " />
+                          <svg width="18" height="18">
+                              <use href="./images/sprite.svg#phone"></use>
+                          </svg>
+                      </label>
+  
+                      <label class="form-label">
+                          <span>Почта</span>
+                          <input type="email" class="form-input" name="mail" placeholder=" " />
+                          <svg width="18" height="18">
+                              <use href="./images/sprite.svg#email"></use>
+                          </svg>
+                      </label>
+  
+                      <label class="form-label">
+                          <span>Комментарий</span>
+                          <textarea name="comment" class="form-input comment" rows="5" cols="45" placeholder="Введите текст"></textarea>
+                      </label>
+                      </div>
+  
+                      <div class="checkbox">
+                          <label class="checkbox-label">                            
+                              <input class="checkbox-input" type="checkbox" name="mail" value="agree" />                             
+                                  <svg width="16" height="15">
+                                      <use href="./images/sprite.svg#checked"></use>
+                                  </svg>
+                                   <span>Соглашаюсь с рассылкой и принимаю 
+                                      <a href="">Условия договора</a>
+                                  </span>
+                              
+                          </label>
+                      </div>
+  
+                      <button type="submit" class="form-button">Отправить</button>
+                  </form>
+                </div> 
             </div>
+
               <script>
                 const refs = {
                     openModalBtn: document.querySelector("[data-open-modal]"),
@@ -80,6 +129,19 @@
                         console.log("Это клик в бекдроп");
                 }
             </script>
+                    <script>
+                      (() => {
+                          document
+                              .querySelector('.js-speaker-form')
+                              .addEventListener('submit', e => {
+                                  e.preventDefault();
+                                  new FormData(e.currentTarget).forEach((value, name) =>
+                                      console.log(`${name}: ${value}`),
+                                  );
+                                  e.currentTarget.reset();
+                              });
+                      })();
+                  </script>
             </section>
 
        <!-- ЧТО МЫ УМЕЕМ-->
@@ -326,10 +388,11 @@
     <!-- Подвал-->
     <footer>
       <div class="container footer-contacts">  
+       <div class="">
+        <a href="./index.html">
+          <p class="logotip-footer"><span class="logo-blue">Web</span><span class="logo-white" >Studio</span></p>
+         </a>
         <address class="footer-adress"> 
-           <a href="./index.html">
-                <p class="logotip-footer"><span class="logo-blue">Web</span><span class="logo-white" >Studio</span></p>
-           </a>
           <ul class="footer-list">
              <li class="list-footer">
                <p class="footer-adress-text">г. Киев, пр-т Леси Украинки, 26</p> 
@@ -342,11 +405,11 @@
               </li>  
           </ul>
         </address> 
-
+      </div>
         <!-- Подвал Соц Сети-->
-        <div class="right-part">
+        <div class="join">
           <h3 class="footer-social-title">Присоединяйтесь</h3>
-          <ul class="socials-links footerish">
+          <ul class="socials-links ">
               <li><a href="">
                       <svg width="20" height="20">
                           <use href="./images/sprite.svg#instagram"></use>
@@ -368,8 +431,24 @@
                       </svg>
                   </a></li>
           </ul>
-      </div>            
-    </div>  
+          
+        <!-- Подвал подпишсаться-->
+        </div>            
+       <div class="subskribe">
+        <h3 class=" title-subscribe">Подпишитесь на рассылку</h3>
+        <form class="form-submit">
+            <label class="form-label-footer">
+                <input type="email" class="form-input-footer" name="mail" placeholder="E-mail" autocomplete="off"/>
+            </label>
+            <button type="submit" class="button-submit">
+                <span>Подписаться</span>
+                <svg width="24" height="24">
+                    <use href="./images/sprite.svg#send"></use>
+                </svg>
+            </button>
+        </form>
+    </div>
+      </div>  
     </footer> 
 </body>
 </html>

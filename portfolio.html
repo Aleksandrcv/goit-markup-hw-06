@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/goit-markup-hw-05/css/modern-normalize.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link  href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/goit-markup-hw-05/css/portfolio.css">
+    <link rel="stylesheet" href="./css/modern-normalize.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link  href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/portfolio.css">
   <title>WebStudio</title>
 </head>
 
@@ -169,12 +169,14 @@
          </ul>
     </main>
     <!-- Подвал-->
+    <!-- Подвал-->
     <footer>
       <div class="container footer-contacts">  
+       <div class="">
+        <a href="./index.html">
+          <p class="logotip-footer"><span class="logo-blue">Web</span><span class="logo-white" >Studio</span></p>
+         </a>
         <address class="footer-adress"> 
-           <a href="./index.html">
-                <p class="logotip-footer"><span class="logo-blue">Web</span><span class="logo-white" >Studio</span></p>
-           </a>
           <ul class="footer-list">
              <li class="list-footer">
                <p class="footer-adress-text">г. Киев, пр-т Леси Украинки, 26</p> 
@@ -187,11 +189,11 @@
               </li>  
           </ul>
         </address> 
-
+      </div>
         <!-- Подвал Соц Сети-->
-        <div class="right-part">
+        <div class="join">
           <h3 class="footer-social-title">Присоединяйтесь</h3>
-          <ul class="socials-links footerish">
+          <ul class="socials-links ">
               <li><a href="">
                       <svg width="20" height="20">
                           <use href="./images/sprite.svg#instagram"></use>
@@ -213,8 +215,24 @@
                       </svg>
                   </a></li>
           </ul>
-      </div>            
-    </div>  
-    </footer>   
+          
+        <!-- Подвал подпишсаться-->
+        </div>            
+       <div class="subskribe">
+        <h3 class=" title-subscribe">Подпишитесь на рассылку</h3>
+        <form class="form-submit">
+            <label class="form-label-footer">
+                <input type="email" class="form-input-footer" name="mail" placeholder="E-mail" autocomplete="off"/>
+            </label>
+            <button type="submit" class="button-submit">
+                <span>Подписаться</span>
+                <svg width="24" height="24">
+                    <use href="./images/sprite.svg#send"></use>
+                </svg>
+            </button>
+        </form>
+    </div>
+      </div>  
+    </footer> 
 </body>
 </html>
